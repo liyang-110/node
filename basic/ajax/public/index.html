@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script src="javascripts/code.js"></script>
+    <script>
+        function loadXMLDoc() {
+            var xmlhttp;
+            if (window.XMLHttpRequest) {
+                //  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+                xmlhttp = new XMLHttpRequest();
+            } else {
+                // IE6, IE5 浏览器执行代码
+                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+            xmlhttp.onreadystatechange = function() {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    document.getElementById("myDiv").innerHTML = xmlhttp.responseText;
+                }
+            }
+            xmlhttp.open("GET", "/info", true);
+            xmlhttp.send();
+        }
+        window.onload = function() {
+            var cname = getCookie('name');
+            alert('设置cookie:' + cname);
+            if (cname == "") {
+                var _name = window.prompt('姓名');
+                setCookie('name', _name, 1);
+            } else {
+                document.getElementById('myDiv').innerHTML = "欢迎:" + cname;
+            }
+        };
+    </script>
+</head>
+
+<body>
+    <div>
+        <button type="button" onclick="loadXMLDoc()">显示列表</button>
+        <button type="button" onclick="loadXMLDoc()">增加用户</button>
+        <button type="button" onclick="loadXMLDoc()">删除用户</button>
+    </div>
+    <div>
+        <button type="button" onclick="dropCookie('name')">删除cookie</button>
+    </div>
+    <div id="myDiv">
+        <h2>使用 AJAX 修改该文本内容</h2>
+    </div>
+</body>
+
+</html>

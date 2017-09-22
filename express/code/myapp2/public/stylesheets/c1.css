@@ -1,0 +1,26 @@
+body{
+	background-color:grey;
+	text-align:center;
+}
+form{
+	width:240px;
+	margin:auto;
+}
+#textfeild{
+	background-color:white;
+	width:auto;
+	height:20px;
+	text-align:right;
+}
+li{
+	list-style:none;
+  float:left;
+  width:16px;
+  height:16px;
+  margin:5px;
+  display:inline;
+  line-height:32px;
+  font-size:14px;
+  background-color:#eaeaea;
+	padding:10px 10px 10px 10px;
+}

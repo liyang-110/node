@@ -1,0 +1,12 @@
+{
+    "name": "testbuffer",
+    "version": "1.0.0",
+    "description": "JavaScript语言本身没有连续二进制数据类型。因此，在Node.js内核中，定义了一个Buffer类，专门用于存放二进制数据的缓存区。 *** ### 创建Buffer类 - 方法1. 创建长度为10字节的Buffer",
+    "main": "len.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node len.js"
+    },
+    "author": "",
+    "license": "ISC"
+}

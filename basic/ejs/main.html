@@ -1,0 +1,26 @@
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <script type="text/javascript" src="node_modules/ejs/ejs.js"></script>
+    </script>
+    <script>
+        var EJS = require('ejs');
+
+        function myfunction() {
+            var data = '{ "title ":"cleaning ", "supplies ":[ "mop ", "broom ", "duster " ] }';
+            var html = new EJS({
+                url: './cleaning.ejs'
+            }).render(JSON.parse(data)); //JSON.parse(data) 把JSON字符串解析为原生的javascript值。 
+            alert(html);
+            document.getElementById('div1').innerHTML = html;
+        }
+    </script>
+</head>
+
+<body>
+    <button onclick="myfunction()">点击</button>
+    <div id="div1"></div>
+</body>
+
+</html>
